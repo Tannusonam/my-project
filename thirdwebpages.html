@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimedia Gallery and Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .gallery {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    .gallery > div {
+      width: 30%;
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .audio, .video, .svg, .image {
+      margin-bottom: 15px;
+    }
+    .progress-bar {
+      width: 100%;
+      background-color: #e0e0e0;
+      margin: 20px 0;
+    }
+    .progress-bar progress {
+      width: 100%;
+      height: 20px;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to the Multimedia Gallery</h1>
+
+  <div class="gallery">
+    <!-- SVG graphic example -->
+    <div class="svg">
+      <h2>SVG Example</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="lightblue"/>
+      </svg>
+    </div>
+
+    <!-- Video example -->
+    <div class="video">
+      <h2>Video Example</h2>
+      <video width="320" height="240" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Audio example -->
+    <div class="audio">
+      <h2>Audio Example</h2>
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <!-- Picture and Source tags example -->
+  <h2>Responsive Image Example</h2>
+  <picture>
+    <source srcset="https://via.placeholder.com/400x300.png" media="(min-width: 600px)">
+    <source srcset="https://via.placeholder.com/300x200.png" media="(max-width: 599px)">
+    <img src="https://via.placeholder.com/400x300.png" alt="Placeholder Image">
+  </picture>
+
+  <!-- Progress bar example -->
+  <h2>Progress Bar Example</h2>
+  <p>Loading your data...</p>
+  <div class="progress-bar">
+    <progress value="50" max="100">50%</progress>
+  </div>
+
+  <!-- Abbreviation example -->
+  <h2>Abbreviation Example</h2>
+  <p>HTML stands for <abbr title="HyperText Markup Language">HTML</abbr>. It is the standard language for creating web pages.</p>
+
+  <!-- Link to another page -->
+  <footer>
+    <p>For more information, visit <a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a>.</p>
+  </footer>
+
+</body>
+</html>
