@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Form with Select, Datalist, Output, Input, Summary, and Dialog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    dialog {
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Interactive Form</h1>
+
+  <form id="eligibility-form">
+    <!-- Select and Datalist example -->
+    <label for="country">Select your country:</label>
+    <select id="country" name="country" required>
+      <option value="">--Select--</option>
+      <option value="US">United States</option>
+      <option value="UK">United Kingdom</option>
+      <option value="IN">India</option>
+      <option value="AU">Australia</option>
+    </select>
+    <br><br>
+
+    <!-- Datalist for entering the city -->
+    <label for="city">Enter your city (suggestions will appear):</label>
+    <input list="cities" id="city" name="city">
+    <datalist id="cities">
+      <option value="New York">
+      <option value="London">
+      <option value="Mumbai">
+      <option value="Sydney">
+    </datalist>
+    <br><br>
+
+    <!-- Input and Output for age input and calculation -->
+    <label for="age">Enter your age:</label>
+    <input type="number" id="age" name="age" required>
+    <br><br>
+
+    <label for="benefit">Eligibility for benefit:</label>
+    <output id="benefit"></output>
+    <br><br>
+
+    <button type="button" onclick="checkEligibility()">Check Eligibility</button>
+  </form>
+
+  <!-- Summary and Dialog for additional info -->
+  <details>
+    <summary>Click for more information</summary>
+    <p>Eligibility for benefits varies by country and age. Make sure to check local regulations to ensure you qualify for all available programs.</p>
+  </details>
+
+  <button onclick="showDialog()">More Info</button>
+
+  <dialog id="info-dialog">
+    <h2>Additional Information</h2>
+    <p>Depending on your country and age, you may qualify for special discounts or services. For more details, consult your local government website.</p>
+    <button onclick="closeDialog()">Close</button>
+  </dialog>
+
+  <script>
+    function checkEligibility() {
+      const age = document.getElementById('age').value;
+      const benefitOutput = document.getElementById('benefit');
+      
+      if (age >= 18) {
+        benefitOutput.textContent = "You are eligible for adult benefits.";
+      } else {
+        benefitOutput.textContent = "You are not eligible for adult benefits.";
+      }
+    }
+
+    function showDialog() {
+      const dialog = document.getElementById('info-dialog');
+      dialog.showModal();
+    }
+
+    function closeDialog() {
+      const dialog = document.getElementById('info-dialog');
+      dialog.close();
+    }
+  </script>
+
+</body>
+</html>
